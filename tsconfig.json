@@ -1,12 +1,10 @@
 {
-  "include": [
-    "src",
-    "App.tsx",
-    "./typings.d.ts"
-  ],
+  "include": ["src", "./typings.d.ts"],
   "compilerOptions": {
     "declaration": true,
+    "rootDir": "./src",
     "outDir": "./lib",
+    "noEmit": false,
     "strict": true,
     "removeComments": true,
     "jsx": "react",
@@ -32,17 +30,9 @@
     "resolveJsonModule": true,
     "noFallthroughCasesInSwitch": true,
     "strictPropertyInitialization": false,
-    "lib": [
-      "dom",
-      "esnext"
-    ],
-    "typeRoots": [
-      "./node_modules/@types",
-      "./@types"
-    ]
+    "lib": ["dom", "esnext"],
+    "typeRoots": ["./node_modules/@types", "./@types"]
   },
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "extends": "expo/tsconfig.base"
 }
