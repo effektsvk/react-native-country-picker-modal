@@ -4,8 +4,8 @@
 
 <p>
    <a href="https://reactnative.gallery/xcarpentier/country-picker"><img src="https://img.shields.io/badge/reactnative.gallery-%F0%9F%8E%AC-green.svg"/></a>
-  <a href="https://www.npmjs.com/package/react-native-country-picker-modal"><img src="https://img.shields.io/npm/v/react-native-country-picker-modal.svg?style=flat-square"></a>
-  <a href="https://www.npmjs.com/package/react-native-country-picker-modal"><img src="https://img.shields.io/npm/dm/react-native-country-picker-modal.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/@effektsvk/react-native-country-picker-modal"><img src="https://img.shields.io/npm/v/@effektsvk/react-native-country-picker-modal.svg?style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/@effektsvk/react-native-country-picker-modal"><img src="https://img.shields.io/npm/dm/@effektsvk/react-native-country-picker-modal.svg?style=flat-square"></a>
   <a href="#hire-an-expert"><img src="https://img.shields.io/badge/%F0%9F%92%AA-hire%20an%20expert-brightgreen"/></a>
 </p>
 
@@ -21,7 +21,7 @@
 ## Installation
 
 ```bash
-$ yarn add react-native-country-picker-modal
+$ yarn add @effektsvk/react-native-country-picker-modal
 ```
 
 ## Basic Usage
@@ -31,7 +31,7 @@ For more complete example open [App.tsx](https://github.com/xcarpentier/react-na
 ```tsx
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, PixelRatio, Switch } from 'react-native'
-import CountryPicker from 'react-native-country-picker-modal'
+import CountryPicker from '@effektsvk/react-native-country-picker-modal'
 import { CountryCode, Country } from './src/types'
 
 const styles = StyleSheet.create({
@@ -41,9 +41,8 @@ const styles = StyleSheet.create({
 export default function App() {
   const [countryCode, setCountryCode] = useState<CountryCode>('FR')
   const [country, setCountry] = useState<Country>(null)
-  const [withCountryNameButton, setWithCountryNameButton] = useState<boolean>(
-    false,
-  )
+  const [withCountryNameButton, setWithCountryNameButton] =
+    useState<boolean>(false)
   const [withFlag, setWithFlag] = useState<boolean>(true)
   const [withEmoji, setWithEmoji] = useState<boolean>(true)
   const [withFilter, setWithFilter] = useState<boolean>(true)
@@ -149,7 +148,9 @@ export default function App() {
 A simple example to display a `CountryPicker` component with a dark theme.
 
 ```tsx
-import CountryPicker, { DARK_THEME } from 'react-native-country-picker-modal'
+import CountryPicker, {
+  DARK_THEME,
+} from '@effektsvk/react-native-country-picker-modal'
 
 const MyDarkView = () => <CountryPicker theme={DARK_THEME} />
 ```
