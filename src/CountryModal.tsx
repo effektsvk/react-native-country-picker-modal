@@ -33,17 +33,27 @@ export const CountryModal = ({
   )
   React.useEffect(() => {
     if (disableNativeModal) {
-      teleport!(<AnimatedModal {...props} withModal={withModal} disableNativeModal={disableNativeModal} animated={animated} animationType={animationType}>{content}</AnimatedModal>)
+      teleport!(
+        <AnimatedModal visible={props.visible}>{content}</AnimatedModal>,
+      )
     }
-  }, [disableNativeModal])
+  }, [disableNativeModal, props.visible])
   if (withModal) {
     if (Platform.OS === 'web') {
-      return <Modal {...props} withModal={withModal} disableNativeModal={disableNativeModal} animated={animated} animationType={animationType}>{content}</Modal>
+      return (
+        <Modal {...props} animated={animated} animationType={animationType}>
+          {content}
+        </Modal>
+      )
     }
     if (disableNativeModal) {
       return null
     }
-    return <Modal {...props} withModal={withModal} disableNativeModal={disableNativeModal} animated={animated} animationType={animationType}>{content}</Modal>
+    return (
+      <Modal {...props} animated={animated} animationType={animationType}>
+        {content}
+      </Modal>
+    )
   }
   return content
 }
