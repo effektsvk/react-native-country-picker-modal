@@ -10,7 +10,13 @@ import {
 import { CountryProvider, DEFAULT_COUNTRY_CONTEXT } from './CountryContext'
 import { ThemeProvider, DEFAULT_THEME, Theme } from './CountryTheme'
 import { CountryFilterProps } from './CountryFilter'
-import { StyleProp, ViewStyle, ImageStyle, ModalProps, FlatListProps } from 'react-native'
+import {
+  StyleProp,
+  ViewStyle,
+  ImageStyle,
+  ModalProps,
+  FlatListProps,
+} from 'react-native'
 import { CountryPicker } from './CountryPicker'
 
 interface Props {
@@ -50,11 +56,17 @@ interface Props {
   onClose?(): void
 }
 
-const Main = ({ theme, translation, onSelect = () => {}, withEmoji = true, ...props }: Props) => {
+const Main = ({
+  theme,
+  translation,
+  onSelect = () => {},
+  withEmoji = true,
+  ...props
+}: Props) => {
   return (
     <ThemeProvider theme={{ ...DEFAULT_THEME, ...theme }}>
       <CountryProvider value={{ ...DEFAULT_COUNTRY_CONTEXT, translation }}>
-        <CountryPicker onSelect={onSelect} {...props} />
+        <CountryPicker onSelect={onSelect} withEmoji={withEmoji} {...props} />
       </CountryProvider>
     </ThemeProvider>
   )
