@@ -113,5 +113,6 @@
   },
   "resolutions": {
     "mem": "^4.0.0"
-  }
+  },
+  "main": "lib/index.js"
 }
